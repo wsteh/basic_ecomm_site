@@ -36,22 +36,23 @@
                 </ul>
             </div>
         </div>
-
-        <div class="container" ng-controller="productController">
-            <div class="listing row">
-                <div class="col-md-6 col-lg-4" ng-repeat="product in products">
-                    <div data-id="{{product.id}}">
-                        <div class="img"><img ng-src="{{product.images| checkurl}}" /></div>
-                        <div class="name"><span>{{product.name}}</span></div>
-                        <div class="price"><span>{{product.symbol . product.selling_price}}</span></div>
-                        <div class="btm">
-                            <div class="qty"><input type="text" size="2"></div>
-                            <div class="buy"><input type="button" name="buy" value="Buy Now"></div>
+        <form action="/site/shoppingcart" method="POST">
+            <div class="container" ng-controller="productController">
+                <div class="listing row">
+                    <div class="col-md-6 col-lg-4" ng-repeat="product in products">
+                        <div data-id="{{product.id}}">
+                            <div class="img"><img ng-src="{{product.images| checkurl}}" /></div>
+                            <div class="name"><span>{{product.name}}</span></div>
+                            <div class="price"><span>{{product.symbol . product.selling_price}}</span></div>
+                            <div class="btm">
+                                <div class="qty"><input type="text" size="2"></div>
+                                <div class="buy"><input type="button" name="buy" value="Buy Now"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <script src="/static/main.js"></script>
     </body>
 
