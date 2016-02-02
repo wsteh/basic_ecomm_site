@@ -1,6 +1,8 @@
 <?php
 
-class SiteController extends CController implements IWebServiceProvider {
+class SiteController extends CController 
+{
+    public $layout='column1';
 
     /**
      * This is the default action that displays the phonebook Flex client.
@@ -13,25 +15,22 @@ class SiteController extends CController implements IWebServiceProvider {
      * This action serves as a SOAP client to test the phonebook Web service.
      */
     public function actionShoppingcart() {
+        $data = array();
+
+        $model = new shoppingcartForm();
+        $model->attributes = $_POST;
+                
+        if ($model->validate()) {
+            $this->render('index2', $data);
+        }
         
+//        $this->redirect('site/index');
     }
 
-    /**
-     * This method is required by IWebServiceProvider.
-     * It makes sure the user is logged in before making changes to data.
-     * @param CWebService the currently requested Web service.
-     * @return boolean whether the remote method should be executed.
-     */
-    public function beforeWebMethod($service) {
+    public function actionValidateStep2() {
+        $data = array();
+        $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
         
+        $sc = new shoppingcart();
     }
-
-    /**
-     * This method is required by IWebServiceProvider.
-     * @param CWebService the currently requested Web service.
-     */
-    public function afterWebMethod($service) {
-        
-    }
-
 }

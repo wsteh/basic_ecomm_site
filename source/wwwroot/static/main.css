@@ -1,0 +1,6 @@
+.listing div.img {margin: 0 auto;}
+.listing div.img > img {display: block;width: 360px; height: 280px;}
+.listing div.name {max-height: 20px;overflow: hidden;}
+.listing > div > div {border: 0px solid;width: 360px;margin:0 auto;}
+.listing div.btm > .qty,
+.listing div.btm > .buy {display: inline-block;}
