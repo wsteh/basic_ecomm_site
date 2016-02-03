@@ -17,7 +17,7 @@ class SiteController extends CController {
                 'model' => $model
             ));
         } else {
-            $this->redirect('site/index');
+            $this->redirect('/');
         }
     }
 
