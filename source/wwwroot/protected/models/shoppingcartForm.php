@@ -51,7 +51,7 @@ class shoppingcartForm extends CFormModel {
                     }
                     break;
                 default :
-                    $this->addError('ID', 'Invalid Promotion Code.');
+//                    $this->addError('ID', 'Invalid Promotion Code.');
             }
         }
     }

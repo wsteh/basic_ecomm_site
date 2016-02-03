@@ -4,7 +4,7 @@
 // application properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Yii Framework: Phone Book Demo',
+    'name' => 'Basic Ecommerce',
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -12,8 +12,8 @@ return array(
     ),
     // application components
     'components' => array(
-        'db' => array(
-            'connectionString' => 'sqlite:protected/data/phonebook.db',
-        ),
+//        'db' => array(
+//            'connectionString' => 'sqlite:protected/data/phonebook.db',
+//        ),
     ),
 );

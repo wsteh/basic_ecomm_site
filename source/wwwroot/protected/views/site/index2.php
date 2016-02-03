@@ -3,10 +3,10 @@
 
     <div class="step2 row">
         <div class="col-md-6 col-lg-6" style="border: 1px solid;">
-            <div style="float:left">
+            <div class="info_lf">
                 <div class="img"><img src="<?php echo $model->data['images']; ?>" style="width: 250px" /></div>
             </div>
-            <div style="float:right">
+            <div class="info_rg">
                 <div class="name"><span><?php echo $model->data['name']; ?></span></div>
                 <div class="btm">
                     <div class="left"></div>

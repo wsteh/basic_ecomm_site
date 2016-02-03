@@ -1,6 +1,8 @@
 <div class="container">
     <h3>Simple Shopping App - Step 3</h3>
-
+    <div>
+        <h5>Order Number: ORD-000101</h5>
+    </div>
     <div class="step3 row">
         <div class="col-md-6 col-lg-6" style="border: 1px solid;">
             <div style="float:left">

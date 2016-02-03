@@ -9,5 +9,18 @@
 .lbl, .left {width: 120px;}
 .step2 .btm > .left, .step2 .btm > .right {display: inline-block;}
 .step2 .btm > .buy {float: right;}
+.step2 .info_lf {
+    float:left
+}
+.step2 .info_rg {
+    padding: 10px;
+    width: 300px;
+    float:right
+}
+.step3 div.name {
+  padding: 10px;
+  width: 300px;
+}
 .step3 .btm > .left, .step3 .btm > .right {display: inline-block;}
-.step3 .left {width: 220px;}
+.step3 .left {width: 120px;}
+.step3 .right {width: 220px; text-align: right;}
