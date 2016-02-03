@@ -1,36 +1,38 @@
 <?php
 
-class SiteController extends CController 
-{
-    public $layout='column1';
+class SiteController extends CController {
 
-    /**
-     * This is the default action that displays the phonebook Flex client.
-     */
+    public $layout = 'column1';
+
     public function actionIndex() {
         $this->render('index');
     }
 
-    /**
-     * This action serves as a SOAP client to test the phonebook Web service.
-     */
-    public function actionShoppingcart() {
-        $data = array();
-
+    public function actionStep2() {
         $model = new shoppingcartForm();
         $model->attributes = $_POST;
-                
+
         if ($model->validate()) {
-            $this->render('index2', $data);
+            $this->render('index2', array(
+                'model' => $model
+            ));
+        } else {
+            $this->redirect('site/index');
         }
-        
-//        $this->redirect('site/index');
     }
 
-    public function actionValidateStep2() {
-        $data = array();
-        $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
-        
-        $sc = new shoppingcart();
+    public function actionStep3() {
+        $model = new shoppingcartForm();
+        $model->scenario = 'process_step2';
+        $model->attributes = $_POST;
+
+        if ($model->validate()) {
+            $this->render('index3', array(
+                'model' => $model
+            ));
+        } else {
+            $this->redirect('site/index');
+        }
     }
+
 }

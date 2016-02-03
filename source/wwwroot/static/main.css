@@ -4,3 +4,10 @@
 .listing > div > div {border: 0px solid;width: 360px;margin:0 auto;}
 .listing div.btm > .qty,
 .listing div.btm > .buy {display: inline-block;}
+
+.lbl, .ent {display: inline-block;}
+.lbl, .left {width: 120px;}
+.step2 .btm > .left, .step2 .btm > .right {display: inline-block;}
+.step2 .btm > .buy {float: right;}
+.step3 .btm > .left, .step3 .btm > .right {display: inline-block;}
+.step3 .left {width: 220px;}

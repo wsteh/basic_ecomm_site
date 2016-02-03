@@ -13,7 +13,7 @@
 <div class="container" ng-controller="productController">
     <div class="listing row">
         <div class="col-md-6 col-lg-4" ng-repeat="product in products">
-            <form action="<?php echo Yii::app()->createUrl('site/shoppingcart'); ?>" method="POST">
+            <form action="<?php echo Yii::app()->createUrl('site/step2'); ?>" method="POST">
                 <input type="hidden" name="id" value="{{product.id}}">
                 <div data-id="{{product.id}}">
                     <div class="img"><img ng-src="{{product.images| checkurl}}" /></div>

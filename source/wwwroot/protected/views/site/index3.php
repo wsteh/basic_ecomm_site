@@ -1,58 +1,50 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="en" />
-        <title><?php echo $this->pageTitle; ?></title>
-        <link href="/static/flexSlider/flexslider.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<div class="container">
+    <h3>Simple Shopping App - Step 3</h3>
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-        <script src="/static/jquery-2.2.0.min"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
-        <script src="/static/flexSlider/jquery.flexslider-min.js"></script>
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <style>
-            .listing div.img {margin: 0 auto;}
-            .listing div.img > img {display: block;width: 360px; height: 280px;}
-            .listing div.name {max-height: 20px;overflow: hidden;}
-            .listing > div > div {border: 0px solid;width: 360px;margin:0 auto;}
-            .listing div.btm > .qty,
-            .listing div.btm > .buy {display: inline-block;}
-        </style>
-    </head>
-
-    <body style="margin: 0;">
-        <div>
-            <div class="flexslider" ng-controller="bannerController">
-                <ul class="slides">
-                    <li ng-repeat="banner in banners" repeat-complete="doSomething( $index )">
-                        <img ng-src="{{banner.image| checkurl}}" />
-                    </li>
-                </ul>
+    <div class="step3 row">
+        <div class="col-md-6 col-lg-6" style="border: 1px solid;">
+            <div style="float:left">
+                <div class="img"><img src="<?php echo $model->data['images']; ?>" style="width: 250px" /></div>
+            </div>
+            <div style="float:right">
+                <div class="name"><span><?php echo $model->data['name']; ?></span></div>
             </div>
         </div>
-
-        <div class="container" ng-controller="productController">
-            <div class="listing row">
-                <div class="col-md-6 col-lg-4" ng-repeat="product in products">
-                    <div data-id="{{product.id}}">
-                        <div class="img"><img ng-src="{{product.images| checkurl}}" /></div>
-                        <div class="name"><span>{{product.name}}</span></div>
-                        <div class="price"><span>{{product.symbol . product.selling_price}}</span></div>
-                        <div class="btm">
-                            <div class="qty"><input type="text" size="2"></div>
-                            <div class="buy"><input type="button" name="buy" value="Buy Now"></div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="btm price">
+                <div class="left">Unit Price</div>
+                <div class="right"><span><?php echo $model->data['symbol'] . ' ' . $model->data['selling_price']; ?></span></div>
+            </div>
+            <div class="btm qty">
+                <div class="left">Quantity</div>
+                <div class="right"><span><?php echo $model->qty; ?></span></div>
+            </div>
+            <div><hr></div>
+            <div class="btm total">
+                <div class="left">Total Price</div>
+                <div class="right"><span><?php echo $model->data['symbol'] . ' ' . $model->getTotal(); ?></span></div>
+            </div>
+            <div class="btm code">
+                <div class="left">Promotion Code</div>
+                <div class="right"><span><?php echo $model->code; ?></span></div>
+            </div>
+            <div class="btm discount">
+                <div class="left">Discount</div>
+                <div class="right"><span><?php echo '-' . $model->data['symbol'] . ' ' . $model->getDiscount(); ?></span></div>
+            </div>
+            <div class="btm deliver">
+                <div class="left">Delivery To</div>
+                <div class="right"><span><?php echo $model->area; ?></span></div>
+            </div>
+            <div class="btm shipping">
+                <div class="left">Shipping Fee</div>
+                <div class="right"><span><?php echo $model->data['symbol'] . ' ' . $model->getShipping(); ?></span></div>
+            </div>
+            <div><hr></div>
+            <div class="btm payment">
+                <div class="left">Payment Required</div>
+                <div class="right"><span><?php echo $model->data['symbol'] . ' ' . $model->getPaymentTotal(); ?></span></div>
             </div>
         </div>
-        <script src="/static/main.js"></script>
-    </body>
-
-</html>
+    </div>
+</div>
